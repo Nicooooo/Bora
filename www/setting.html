@@ -1,0 +1,321 @@
+<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>-->
+<!------ Include the above in your HEAD tag ---------->
+
+<!--
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+-->
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/setting.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function()
+    {
+    $("#signup").click(function(){
+    var user=$("#signuser").val();
+    var pass=$("#signpass").val();
+    {
+     $.ajax({
+        type: "POST",
+        url:"http://localhost/PhoneGap/hello/www/models/main.php?req=signup",
+        data: 'pass='+pass+'&user='+user,
+        crossDomain: true,
+        cache: false,
+        });
+     }
+     });
+
+     $("#login").click(function(){
+    var user=$("#loginuser").val();
+    var pass=$("#loginpass").val();
+    $('#modalLogin').modal('hide');
+     $('#myModal').modal('hide');
+
+    {
+     $.ajax({
+        type: "POST",
+        url:"http://localhost/PhoneGap/hello/www/models/main.php?req=login",
+        data: 'pass='+pass+'&user='+user,
+       success: function( data ) {
+            var data = JSON.parse(data);
+            console.log("DATAAA"+data['email']);
+            window.localStorage.setItem("session", data['email']);
+            var qwe = window.localStorage.getItem("session"); 
+            console.log("session"+qwe);
+
+            // $(".profile-userpic").append("<p> HELLO NICOOOOOOOO</p>");
+                      
+            // $.each(data, function(i, item){
+            //     console.log("ETO"+item.email);
+            // });
+
+         },
+         error: function(xhr, status, error) {
+            console.log("hindiokay");
+            // var err = eval("(" + xhr.responseText + ")");
+            // console.log(err.Message);
+            // check status && error
+         },
+        });
+     }
+     });
+
+     if(window.localStorage.getItem("session") != null){
+             $(".profile-userpic").append("<p> HELLO NICOOOOOOOO</p>");
+             $('#loginCheck').removeAttr('data-toggle');
+     }
+
+     $("#logout").click(function(){
+            localStorage.clear();
+     });       
+     });
+    </script>
+
+    <script>
+        $('#settingsform').click(function(){
+            console.log("asdasdsad");
+        $('#addItemModal').modal('hide');
+        });
+
+        $('#signupform').click(function(){
+            console.log("hehe");
+        $('#modalsignup').modal('hide');
+        });
+
+        $('#loginform').click(function(){
+            console.log("hehe");
+        $('#modalLogin').modal('hide');
+        });
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row profile">
+
+        <div class="row">
+            <!--<div class="col-xs-6 col-md-6">-->
+            <div class="col-md-12">
+                <button id="loginCheck" type="button" class="btn-header" data-toggle="modal" data-target="#myModal">
+                    <div class="profile-userpic">
+                        <img src="img/default_profile.png" alt=""  align="left">
+                    </div>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="" class="login-modal modal fade modal-fullscreen footer-to-bottom" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="settingsform" class="close" data-dismiss="modal" aria-label="Close" data-number="1">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="title2" >
+                    <h3 align="center" font-family="myFont" >
+                        Boracay Ph
+                    </h3>
+                </div>
+
+                <div class="social-box">
+                    <div class="row mg-btm">
+                        <div class="col-md-12">
+                            <a href="#" class="btn btn-primary btn-block" >
+                            <img src="img/fb2.png" height="30" width="30">  Login with Facebook
+                            </a>
+                        </div>
+                    </div> <!--row mg-btm-->
+
+                    <div class="row">
+                        <div class="row mg-btm1">
+                            <div class="col-md-12">
+                                <a href="#" class="btn btn-info btn-block" >
+                                <img src="img/g2.png" height="30" width="30">Login with Google+
+                                </a>
+                            </div>  <!--col-md-12-->
+                        </div> <!--row mg-btm-->
+                    </div> <!--row-->
+                </div>  <!--social box-->
+
+                <div class="login-footer">
+
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <div style='float: left;'>
+                                <button type="button" class="btn btn-loginsignup" data-toggle="modal" data-target="#modalLogin">
+                                    Log In
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-md-6">
+                            <div style='float: right;'>
+                                <button type="button" class="btn btn-loginsignup" data-toggle="modal" data-target="#modalsignup">
+                                    Sign Up
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>  <!--row-->
+                </div> <!--footer-->
+
+                <!--modal login-->
+                <div class="modallogin modal fade login" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog-login" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <button id="loginform" class="close" data-dismiss="modalLogin" aria-label="Close" data-number="2">
+                                    <span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    Log In</h4>
+                            </div>
+
+                            <div class="modal-body">
+                               
+                                    <div class="group">
+                                        <input id="loginuser" type="text" required>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Email</label>
+                                    </div>
+
+                                    <div class="group">
+                                        <input id="loginpass" type="text" required>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Password</label>
+                                    </div>
+
+                                    <input id="login" type="submit" value="Submit">
+                               
+                            </div>
+
+                        </div><!-- modal-content -->
+                    </div><!-- modal-dialog -->
+                </div><!-- modal -->
+
+
+                <!--modal signup-->
+                <div class="modalsignup modal fade signup" id="modalsignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <button id="signupform" class="close" data-dismiss="modalsignup" aria-label="Close" data-number="2">
+                                    <span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel2">
+                                    Sign Up</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <form>
+
+                                    <div class="group">
+                                        <input id="signuser" type="text" required>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Email</label>
+                                    </div>
+
+                                    <div class="group">
+                                        <input id="signpass" type="text" required>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Password</label>
+                                    </div>
+
+                                    <input id="signup" type="submit" value="Submit">
+                                </form>
+
+                            </div>
+
+                        </div><!-- modal-content -->
+                    </div><!-- modal-dialog -->
+                </div><!-- modal -->
+
+
+            </div><!-- modal-content -->
+
+
+
+
+        </div><!-- modal-dialog -->
+    </div><!-- modal -->
+
+
+
+
+
+    <div class="row">
+        <div class="profile-usermenu">
+            <ul class="nav">
+                <li >
+                    <a href="#">
+                        <i class="invitefriends"></i>
+                        <img src="img/invitefriends.png" alt="" style="width:32px;height:32px;margin-right:15px;"> Invite Friends
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="aboutus"></i>
+                        <img src="img/aboutus.png" alt="" style="width:32px;height:32px;margin-right:15px;"> About Us
+                    </a>
+                </li>
+                <li>
+                    <a href="#" >
+                        <i class="faq"></i>
+                        <img src="img/faq.png" alt="" style="width:32px;height:32px;margin-right:15px;"> Help Center
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="currency"></i>
+                        <img src="img/currency.png" alt="" style="width:32px;height:32px;margin-right:15px;"> Currency
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="favorites"></i>
+                        <img src="img/favorites.png" alt="" style="width:32px;height:32px;margin-right:15px;"> Favorites
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="history"></i>
+                        <img src="img/history.png" alt="" style="width:32px;height:32px;margin-right:15px;"> History
+                    </a>
+                </li>
+                <li>
+                    <a id="logout">
+                        <i class="history"></i>
+                        <img src="img/history.png" alt="" style="width:32px;height:32px;margin-right:15px;"> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+</div>
+</body>
+

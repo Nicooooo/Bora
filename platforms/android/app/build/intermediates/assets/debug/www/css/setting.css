@@ -1,0 +1,433 @@
+/***
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+
+
+
+body {
+  background-color: #ffffff!important;
+  margin: 0;
+  padding: 0;
+
+}
+/*#d9f4ff*/
+/* Profile container */
+.profile {
+  border-bottom: 3px solid #c6e7f0;
+  padding-bottom: 5px;
+
+}
+
+.text2{
+    height:auto;
+    /*line-height:150px;*/
+    text-align:center;
+}
+
+/* Profile sidebar */
+/*.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}*/
+
+.profile-userpic img {
+
+  margin-left:10px;
+  margin-top:10px;
+  -webkit-border-radius: 50% ;
+  -moz-border-radius: 50% ;
+  border-radius: 50% ;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #d9f4ff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  /*border-bottom: 1px solid #f0f4f7;*/
+}
+
+.profile-usermenu ul li divider{
+  /*border-bottom: 1px solid #f0f4f7;*/
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #071923;
+  font-size: 14px;
+  font-weight: 600;
+
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  background: #fff;
+  min-height: 460px;
+}
+
+
+.test-header {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #a0e9fc;
+    height: 20%;
+}
+
+/*.modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  &:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  &>div {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: #ffffff;
+    color: #333333;
+  }
+  header {
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+    color: #333333;
+  }
+}*/
+
+.login-modal{
+    padding-left:0px!important;
+    padding-right:0px!important;
+
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+  &:hover {
+    color: #000;
+  }
+}
+
+/*.modal.top .modal-dialog {
+		width: 100%;
+		height: 100%;
+		-webkit-transform: translate3d(0%, 0%, 0);
+		    -ms-transform: translate3d(0%, 50%, 0);
+		     -o-transform: translate3d(0%, 0, 0);
+		        transform: translate3d(50%, 0, 0);
+	}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+}*/
+
+.modal {
+  padding: 0 1em;
+  text-align: center;
+  width: 100%;
+}
+
+
+.modal-dialog {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0px!important;
+
+}
+
+.modal-content {
+  border-radius: 0;
+  min-height: 100%;
+  height: auto;
+  min-width: 100%;
+  width: auto;
+   padding-left: 0px;
+    padding-right: 0px;
+}
+
+.btn-header {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #6fd6ff;
+    font-size: 16px;
+    text-align: center;
+    height: 15%;
+    padding-bottom: 35px;
+}
+
+.btn-info {
+    background-color: #e02f2f!important;
+    border-color: red!important;
+    font-size: 15px!important;
+    text-align: none;
+}
+
+.btn-primary {
+    background-color: #3b5998!important;
+    font-size: 15px!important;
+    text-align: none;
+
+}
+
+.mg-btm {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.mg-btm1 {
+    padding-top: 20px;
+    padding-left: 45px;
+    padding-right: 45px;
+
+}
+
+.modalsignup {
+padding: 0px;!important;
+
+}
+
+.modallogin {
+padding: 0px;!important;
+}
+
+.title2 {
+    padding-top: 80px;
+    font-family: 'myFont';
+
+}
+
+.title2 h3{
+    font-size: 50px;
+    color: white;
+}
+
+@font-face{
+    font-family: 'myFont';
+    url:("../fonts/blow-webfont.ttf");
+    url:("../fonts/blow-webfont.woff");
+    url:("../fonts/blow-webfont.woff2");
+
+}
+
+
+@font-face {
+font-family: "myFont";
+font-size: 30px;
+src: url("../fonts/blow-webfont.ttf");
+src:
+url:("../fonts/blow-webfont.ttf"); format("ttf"),
+url:("../fonts/blow-webfont.woff"); format("woff"),
+ url:("../fonts/blow-webfont.woff2"); format("woff2");
+}
+
+
+.btn-loginsignup {
+   	border-radius: 0;
+   	color: white;
+    background-color: #7f929c;
+    font-size: 15px!important;
+    text-align: none;
+}
+
+.login-footer {
+    margin-top: 40px;
+
+    width:300px;
+    display:inline-block;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* form starting stylings ------------------------------- */
+.group 			  {
+  position:relative;
+  margin-bottom:45px;
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#5264AE;
+  transition:0.1s ease all;
+  -moz-transition:0.1s ease all;
+  -webkit-transition:0.1s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0s ease;
+  -moz-animation:inputHighlighter 0s ease;
+  animation:inputHighlighter 0s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}

@@ -1,0 +1,4 @@
+#Tue Oct 23 17:24:23 CST 2018
+base.0=C\:\\wamp\\www\\PhoneGap\\hello\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=C\:\\wamp\\www\\PhoneGap\\hello\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

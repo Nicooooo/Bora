@@ -1,0 +1,107 @@
+.form_search div{
+    margin-bottom:0px!important;
+}
+
+#searchbox {
+    background-color: #00a2e2;
+}
+
+#searchbox .div-searchbox{
+    padding: 20px 15px 0px 15px;
+    margin-bottom: 0px;
+}
+#searchbox .search{
+    height: 30px;
+    font-size: 15px;
+}
+
+#searchbox ul{
+    margin-top: 0px;
+    padding: 0px 15px 0px 15px;
+    position: absolute;
+    z-index: 999999;
+    right: 0px;
+    left: 0px;
+    display: none;
+}
+
+#searchbox li{
+    border-bottom: 1px solid #ddd;
+    border-top: 1px #ddd;
+}
+
+#searchbox a{
+    border: none;
+    font-weight: lighter;
+    font-size: 14px;
+    background-color: white;
+}
+
+#searchbox i{
+    font-size:15px;
+    padding-right: 10px;
+}
+
+#searchbox .nearby-btn{
+    padding: 0px 15px 0px 15px;
+}
+
+#searchbox .ui-btn{
+    border:none;
+}
+
+.div-searchbox div{
+    margin-bottom: 0px;
+}
+.nearby-btn .ui-btn{
+    background: none;
+    padding: .2em 1em;
+}
+.nearby-btn .radio-label {
+    color: white;
+    font-weight: normal;
+
+}
+
+.nearby-btn .ui-btn-icon-left{
+    padding-left: 3.5em;
+}
+
+.nearby-btn input{
+    padding: 5px 10px 0px 10px;
+}
+
+/*.ui-radio .ui-btn{
+    padding: .2em 1em;
+}*/
+
+/*.ui-radio .ui-btn-icon-left{
+    padding-left: 3.5em;
+}*/
+
+.filter-btn{
+    padding: 0px 15px 0px 15px;
+}
+
+.filter-btn .ui-btn{
+    font-size: 12px;
+    padding: .1em 1em;
+}
+
+.map_canvas{
+    /*background-color: white!important;*/
+    height: 490px;
+    margin: 10px 10px;
+}
+
+#infowindow-content .title {
+        font-weight: bold;
+}
+
+#infowindow-content {
+    display: none;
+}
+
+#map #infowindow-content {
+    display: inline;
+}

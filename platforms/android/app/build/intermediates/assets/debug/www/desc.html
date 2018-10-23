@@ -1,0 +1,676 @@
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/sample.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+    <script type='text/javascript'>
+            $(window).load(function(){
+
+    $('#noBorders').children().removeClass('ui-body-c');
+    });
+
+    </script>
+
+        <script>
+            $(document).ready(function()
+            {
+            var $_GET = {};
+            if(document.location.toString().indexOf('?') !== -1) {
+                var query = document.location
+                               .toString()
+                               // get the query string
+                               .replace(/^.*?\?/, '')
+                               // and remove any existing hash string (thanks, @vrijdenker)
+                               .replace(/#.*$/, '')
+                               .split('&');
+            
+                for(var i=0, l=query.length; i<l; i++) {
+                   var aux = decodeURIComponent(query[i]).split('=');
+                   $_GET[aux[0]] = aux[1];
+            }
+                    }
+            //get the 'index' query parameter
+
+
+            var id = $_GET['locations'];
+
+            if(id == 'bat'){
+                        $("#pukabeach").append(" <img  class='qwejkl' src='img/batcave.jpg'>");
+                        $("#desctitle").append("<h2> Bat Caves</h2>");
+            }
+            else if(id == 'puka'){
+                        $("#pukabeach").append(" <img  class='qwejkl' src='img/puka.jpg'>");
+                        $("#desctitle").append("<h2> Puka Shell Beach</h2>");
+            }
+            else if(id == 'willy'){
+                        $("#pukabeach").append(" <img  class='qwejkl' src='img/willy.jpg'>");
+                        $("#desctitle").append("<h2> Willy's Rock</h2>");
+            }
+            else if(id == 'station1'){
+                        $("#pukabeach").append(" <img  class='qwejkl' src='img/station1.jpg'>");
+                        $("#desctitle").append("<h2> Station 1</h2>");
+            }
+            else if(id == 'station2'){
+                        $("#pukabeach").append(" <img  class='qwejkl' src='img/station2.jpg'>");
+                        $("#desctitle").append("<h2> Station 2</h2>");
+            }
+            else if(id == 'station3'){
+                        $("#pukabeach").append(" <img  class='qwejkl' src='img/station3.jpg'>");
+                        $("#desctitle").append("<h2> Station 3</h2>");
+            }
+            else if(id == 'white'){
+                        $("#pukabeach").append(" <img  class='qwejkl' src='img/whitebitch.jpg'>");
+                        $("#desctitle").append("<h2> White Beach</h2>");
+            }
+            else if(id == 'bat'){
+                        $("#pukabeach").append(" <img  class='qwejkl' src='img/batcave.jpg'>");
+                        $("#desctitle").append("<h2> Bat Caves</h2>");
+            }
+            else if(id == 'bolabog'){
+                        $("#pukabeach").append(" <img  class='qwejkl' src='img/bulabog.jpg'>");
+                        $("#desctitle").append("<h2> Bolabog Beach</h2>");
+            }
+            else if(id == 'dmall'){
+                        $("#pukabeach").append(" <img  class='qwejkl' src='img/dmall.jpg'>");
+                        $("#desctitle").append("<h2> D'Mall de Boracay</h2>");
+            }
+
+            // var url="http://localhost/PhoneGap/hello/www/models/main.php?req=retrieve2&locations="+id;
+            // $.getJSON(url,function(data){
+           
+            //             $.each(data, function(i, field){   
+                        
+                            // $("#pukabeach").append(" <img  class='qwejkl' src='img/"+data[0].loc_imagedir+"'>");
+                            //  $("#desctitle").append("<h2>"+data[0].loc_name+"</h2>");
+            //             });
+            //       });
+            });
+        </script>
+
+</head>
+<body>
+<div data-role="content">
+
+    <div id="page1" data-role="page">
+        <div data-role="content">
+
+            <body>
+                <div class="container" style="padding:0px">
+                    <div class="popularimage">
+
+                        <div data-role="content" id="pukabeach" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                             data-corners="false" data-tolerance="0,0" style="padding: 0px; margin-left: -5%; margin-top: -5%; margin-right: -5%;">
+                            <!--data-corners="false" data-tolerance="30,15">-->
+                           
+                        </div>
+
+                    </div>
+
+                    <div class="attraction_content">
+                        <div class="bordershadow ui-body ui-body-a ui-shadow ui-corner-all" style="margin-top: 2%;">
+                            <div id="desctitle">
+                           
+                            </div>
+                            <h9>Things to Do</h9>
+                            <div class="row">
+                                <div class="profile-usermenu">
+
+                                    <ul data-role="none" data-inset="true" class="boxshadow ui-listview ui-listview-inset ui-corner-all " >
+                                        <li class="ui-li-has-icon ui-first-child">
+                                            <a href="#attractions"  data-transition="slide" class="ui-btn ui-icon-carat-r" style="border: none">
+                                                <img src="img/attraction_show.png" alt="" class="ui-li-icon">Attractions & Shows</a>
+                                        </li>
+
+                                            <!--<li class="ui-li-has-icon ui-first-child">-->
+                                                <!--<a href="#tours" data-transition="slide" class="ui-btn ui-icon-carat-r"style="border: none">-->
+                                                    <!--<img src="img/tours_sight1.png" alt="" class="ui-li-icon">Tours & Sightseeing</a>-->
+                                            <!--</li>-->
+
+                                        <li class="ui-li-has-icon ui-first-child">
+                                            <a href="#activities" data-transition="slide" class="ui-btn ui-icon-carat-r"style="border: none">
+                                                <img src="img/activity.png" alt="" class="ui-li-icon">Activities & Experiences</a>
+                                        </li>
+
+                                        <li class="ui-li-has-icon ui-first-child" >
+                                            <a href="#howtogetthere" data-transition="slide" class="ui-btn ui-icon-carat-r"style="border: none">
+                                                <img src="img/transport.png" alt="" class="ui-li-icon">How to Get There</a>
+                                        </li>
+
+                                        <li class="ui-li-has-icon ui-first-child">
+                                            <a href="#dining" data-transition="slide" class="ui-btn ui-icon-carat-r"style="border: none">
+                                                <img src="img/food.png" alt="" class="ui-li-icon">Food & Dining</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>  <!--/.row-->
+
+                        </div> <!--/.ui-body ui-body-a ui-corner-all-->
+
+                    </div> <!--/.attraction_content-->
+
+                </div>
+
+
+            </body>
+
+            <!--<p><a href="#page2" data-transition="slide">Visit Page 2</a></p>-->
+        </div>
+    </div>
+
+
+    <div id="attractions" data-role="page" >
+
+        <div class="ui-grid-c">
+            <div data-role="header">
+                <a href="#page1" data-icon="carat-l" data-transition="slide" class="btnback" style="border: none; height: 20px; box-shadow: none;"></a>
+                    <h1>Attractions & Shows</h1>
+            </div>
+
+            <div class="bordershadow ui-body ui-body-a ui-shadow ui-corner-all" style="margin-top: 2%; width:95%; margin: 2%; padding: 0px;">
+                <a href="#attractions1" data-transition="slide">
+
+                    <div data-role="content" id="farleftarea" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                         data-corners="false" data-tolerance="30,15" style="padding: 0px; margin: 0px;">
+                        <img  class="qwejkl  ui-shadow ui-corner-all " src="img/far.jpg" alt="" style="margin: 0px;">
+                        <div class="imgCaption">Far left Area</div>
+
+                    </div>
+                </a>
+            </div> <!--/.ui-body ui-body-a ui-corner-all-->
+
+            <div class="bordershadow ui-body ui-body-a ui-shadow ui-corner-all" style="margin-top: 2%; width:95%; margin: 2%; padding: 0px;">
+                <a href="#attractions2" data-transition="slide">
+                    <div data-role="content" id="bilatbeach" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                         data-corners="false" data-tolerance="30,15" style="padding: 0px; margin: 0px;">
+                        <img  class="qwejkl  ui-shadow ui-corner-all " src="img/bil.jpg" alt="" style="margin: 0px;">
+                        <div class="imgCaption">Bil-at Beach</div>
+
+                    </div>
+                </a>
+            </div> <!--/.ui-body ui-body-a ui-corner-all-->
+        </div>
+
+        <!--<p><a href="#page1">Visit page 1</a></p>-->
+    </div>
+
+
+    <div id="tours" data-role="page">
+        <div data-role="header">
+            <h1>jQuery Mobile</h1>
+        </div>
+        <div data-role="content">
+            jQuery Mobile Tutorials (page3)
+            <p><a href="#page1">Visit page 1</a></p>
+        </div>
+    </div>
+
+    <div id="activities" data-role="page">
+        <div class="ui-grid-c">
+
+            <div data-role="header">
+                <a href="#page1" data-icon="carat-l" data-transition="slide" class="btnback" style="border: none; height: 20px; box-shadow: none;"></a>
+                <h1>Activities & Experiences</h1>
+            </div>
+
+            <div class="bordershadow ui-body ui-body-a ui-shadow ui-corner-all" style="margin-top: 2%; width:95%; margin: 2%; padding: 0px;">
+                <a href="#activity1" data-transition="slide">
+                    <div data-role="content" id="kayaking" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                         data-corners="false" data-tolerance="30,15" style="padding: 0px; margin: 0px;">
+                        <img  class="qwejkl  ui-shadow ui-corner-all " src="img/kayak.jpg" alt="" style="margin: 0px;">
+                        <div class="imgCaption">Kayaking or paddleboarding</div>
+
+                    </div>
+
+                </a>
+            </div> <!--/.ui-body ui-body-a ui-corner-all-->
+
+            <div class="bordershadow ui-body ui-body-a ui-shadow ui-corner-all" style="margin-top: 2%; width:95%; margin: 2%; padding: 0px;">
+                <a href="#activity2" data-transition="slide">
+                    <div data-role="content" id="pukasunset" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                         data-corners="false" data-tolerance="30,15" style="padding: 0px; margin: 0px;">
+                        <img  class="qwejkl  ui-shadow ui-corner-all " src="img/pukasunset.jpg" alt="" style="margin: 0px;">
+                        <div class="imgCaption">Watch the sunset</div>
+
+                    </div>
+                </a>
+
+            </div> <!--/.ui-body ui-body-a ui-corner-all-->
+
+            <div class="bordershadow ui-body ui-body-a ui-shadow ui-corner-all" style="margin-top: 2%; width:95%; margin: 2%; padding: 0px;">
+                <a href="#activity3" data-transition="slide">
+                    <div data-role="content" id="swimming" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                         data-corners="false" data-tolerance="30,15" style="padding: 0px; margin: 0px;">
+                        <img  class="qwejkl  ui-shadow ui-corner-all " src="img/pukaswimming2.jpg" alt="" style="margin: 0px;">
+                        <div class="imgCaption">Swimming</div>
+
+                    </div>
+                </a>
+            </div> <!--/.ui-body ui-body-a ui-corner-all-->
+
+
+        </div>
+    </div>
+
+
+    <div id="howtogetthere" data-role="page">
+        <div class="ui-grid-c">
+
+            <div data-role="header">
+
+                <a href="#page1" data-icon="carat-l" data-transition="slide" class="btnback" style="border: none; height: 20px; box-shadow: none;"></a>
+                <h1>How to Get There</h1>
+            </div>
+
+            <div class="bordershadow ui-body ui-body-a ui-shadow ui-corner-all" style="margin-top: 2%; width:95%; margin: 2%; padding: 0px;">
+                <a href="#howtogetthere1" data-transition="slide">
+                    <div data-role="content" id="transpo" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                         data-corners="false" data-tolerance="30,15" style="padding: 0px; margin: 0px;">
+                        <img  class="qwejkl  ui-shadow ui-corner-all " src="img/howto2.jpg" alt="" style="margin: 0px;">
+                        <div class="imgCaption">How to Get There</div>
+
+                    </div>
+                </a>
+            </div> <!--/.ui-body ui-body-a ui-corner-all-->
+
+        </div>
+    </div>
+
+    <div id="dining" data-role="page">
+        <div class="ui-grid-c">
+
+            <div data-role="header">
+
+                <a href="#page1" data-icon="carat-l" data-transition="slide" class="btnback" style="border: none; height: 20px; box-shadow: none;"></a>
+                <h1>Food & Dinning</h1>
+            </div>
+
+            <div class="bordershadow ui-body ui-body-a ui-shadow ui-corner-all" style="margin-top: 2%; width:95%; margin: 2%; padding: 0px;">
+                <a href="#dining1" data-transition="slide">
+                    <div data-role="content" id="hija" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                         data-corners="false" data-tolerance="30,15" style="padding: 0px; margin: 0px;">
+                        <img  class="qwejkl  ui-shadow ui-corner-all " src="img/hija.jpg" alt="" style="margin: 0px;">
+                        <div class="imgCaption">Hija de Puka RestoBar</div>
+
+                    </div>
+                </a>
+            </div> <!--/.ui-body ui-body-a ui-corner-all-->
+
+        </div>
+    </div>
+
+    <div id="attractions1" data-role="page">
+        <div class="ui-grid-c">
+            <div data-role="header">
+                <a href="#attractions" data-icon="carat-l" data-transition="slide"
+                   class="btnback" style="border: none; height: 20px; box-shadow: none; "></a>
+                <h1>Attractions & Shows</h1>
+            </div>
+
+                <div data-role="content" id="farabout" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                     data-corners="false" data-tolerance="30,15" style="padding: 0px; margin-left: -5%;  margin-right: -5%;">
+                    <img  class="qwejkl  ui-shadow ui-corner-all " src="img/far.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;">
+                    <div class="imgCaption" style="margin-left:7%; margin-top: 2%; margin-bottom: 3%;">
+                        <b>Far left Area</b><br> USD <font color="#00c0f0">999.99</font>
+                        <img  src="img/teststar2.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;margin-left: 5%;width: 25%; float: right; padding-right: 5%">
+                        <!--<span class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-star"> </span>-->
+                    </div>
+                </div>
+
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+            </div>
+
+            <div class="lastnaloob" style="list-style-position: inside; width:300px; margin:left;">
+                <ul data-role="none" data-inset="true" class="boxshadow ui-listview ui-listview-inset ui-corner-all " >
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: 0%;">
+                        <img src="img/booked2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">xxx Booked </p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%;">
+                        <img src="img/avail2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Available Today</p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%; margin-bottom: 0%;">
+                        <img src="img/instant2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Instant Confimation</p></li>
+                </ul>
+
+
+
+            </div>
+
+            <div>
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Highlights</b></h7>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - At the far left of the beach you’ll find an area which has kept most of its untouched beauty.</font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - The beach is more spacious there and has more green nature.</font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - There are also far less establishments and people around.</font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - This part is a must-see if you go to Puka for some peace and quiet. Its spaciousness also makes it the best spot for a picnic,
+                    just clean up afterwards if you hold one.</font></p>
+
+                <span style="display:block; width:92%; border-bottom: 1px solid #ccc; margin: auto;"></span>
+            </div>
+
+            <div class="lastnaloob">
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Reviews</b></h7>
+            </div>
+
+        </div>
+
+
+    <div id="attractions2" data-role="page">
+        <div class="ui-grid-c">
+            <div data-role="header">
+                <a href="#attractions" data-icon="carat-l" data-transition="slide"
+                   class="btnback" style="border: none; height: 20px; box-shadow: none; "></a>
+                <h1>Attractions & Shows</h1>
+            </div>
+
+            <div class="container" style="padding:0px">
+                <div data-role="content" id="bilabout" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                     data-corners="false" data-tolerance="30,15" style="padding: 0px; margin-left: -5%;  margin-right: -5%;">
+                    <img  class="qwejkl  ui-shadow ui-corner-all " src="img/bil.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;">
+                    <div class="imgCaption" style="margin-left:7%; margin-top: 2%; margin-bottom: 3%;"><b>Bil-At beach</b><br> USD <font color="#00c0f0">999.99</font></div>
+                </div>
+
+                <span style="display:block; width:88%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+            </div>
+
+            <div class="lastnaloob" style="list-style-position: inside; width:300px; margin:left;">
+                <ul data-role="none" data-inset="true" class="boxshadow ui-listview ui-listview-inset ui-corner-all " >
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -6%;">
+                        <img src="img/booked2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">xxx Booked </p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%;">
+                        <img src="img/avail2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Available Today</p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%; margin-bottom: -8%;">
+                        <img src="img/instant2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Instant Confimation</p></li>
+                </ul>
+
+
+
+            </div>
+
+            <div>
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Highlights</b></h7>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - Bil-At Beach is a beautiful little beach located just right of Puka Beach’s entrance area.   </font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - It’s only connected to Puka Beach during low tide though.</font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - During mid to high tide you’ll have to wade through the water or swim to get there. </font></p>
+                <!--<p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - This part is a must-see if you go to Puka for some peace and quiet. Its spaciousness also makes it the best spot for a picnic,-->
+                    <!--just clean up afterwards if you hold one.</font></p>-->
+
+                <span style="display:block; width:92%; border-bottom: 1px solid #ccc; margin: auto;"></span>
+            </div>
+
+            <div class="lastnaloob">
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Reviews</b></h7>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="activity1" data-role="page">
+        <div class="ui-grid-c">
+            <div data-role="header">
+                <a href="#activities" data-icon="carat-l" data-transition="slide"
+                   class="btnback" style="border: none; height: 20px; box-shadow: none; "></a>
+                <h1>Attractions & Shows</h1>
+            </div>
+
+            <div class="container" style="padding:0px">
+                <div data-role="content" id="kayakingabout" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                     data-corners="false" data-tolerance="30,15" style="padding: 0px; margin-left: -5%;  margin-right: -5%;">
+                    <img  class="qwejkl  ui-shadow ui-corner-all " src="img/kayak.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;">
+                    <div class="imgCaption" style="margin-left:7%; margin-top: 2%; margin-bottom: 3%;"><b>Kayaking or Paddleboarding</b><br> USD <font color="#00c0f0">999.99</font></div>
+                </div>
+
+                <span style="display:block; width:88%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+            </div>
+
+            <div class="lastnaloob" style="list-style-position: inside; width:300px; margin:left;">
+                <ul data-role="none" data-inset="true" class="boxshadow ui-listview ui-listview-inset ui-corner-all " >
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -6%;">
+                        <img src="img/booked2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">xxx Booked </p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%;">
+                        <img src="img/avail2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Available Today</p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%; margin-bottom: -8%;">
+                        <img src="img/instant2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Instant Confimation</p></li>
+                </ul>
+
+
+
+            </div>
+
+            <div>
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+                    <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Highlights</b></h7>
+                    <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - A fun way to explore Puka’s coastline and to get to see it from a wider, more distant perspective.</font></p>
+                <span style="display:block; width:92%; border-bottom: 1px solid #ccc; margin: auto;"></span>
+            </div>
+
+            <div class="lastnaloob">
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Reviews</b></h7>
+            </div>
+
+        </div>
+    </div>
+
+        <div id="attractions2" data-role="page">
+        <div class="ui-grid-c">
+            <div data-role="header">
+                <a href="#attractions" data-icon="carat-l" data-transition="slide"
+                   class="btnback" style="border: none; height: 20px; box-shadow: none; "></a>
+                <h1>Attractions & Shows</h1>
+            </div>
+
+            <div class="container" style="padding:0px">
+                <div data-role="content" id="bilabout" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                     data-corners="false" data-tolerance="30,15" style="padding: 0px; margin-left: -5%;  margin-right: -5%;">
+                    <img  class="qwejkl  ui-shadow ui-corner-all " src="img/bil.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;">
+                    <div class="imgCaption" style="margin-left:7%; margin-top: 2%; margin-bottom: 3%;">
+                        <b>Bil-At beach</b><br> USD <font color="#00c0f0">999.99</font>
+                        <img  src="img/teststar.png" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;margin-left: 5%;width: 25%; float: right; padding-right: 5%">
+                    </div>
+                </div>
+
+                <span style="display:block; width:92%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+            </div>
+
+            <div class="lastnaloob" style="list-style-position: inside; width:300px; margin:left;">
+                <ul data-role="none" data-inset="true" class="boxshadow ui-listview ui-listview-inset ui-corner-all " >
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: 0%;">
+                        <img src="img/booked2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">xxx Booked </p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%;">
+                        <img src="img/avail2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Available Today</p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%; margin-bottom: 0%;">
+                        <img src="img/instant2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Instant Confimation</p></li>
+                </ul>
+            </div>
+
+            <div>
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Highlights</b></h7>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - Bil-At Beach is a beautiful little beach located just right of Puka Beach’s entrance area.   </font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - It’s only connected to Puka Beach during low tide though.</font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - During mid to high tide you’ll have to wade through the water or swim to get there. </font></p>
+                <!--<p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - This part is a must-see if you go to Puka for some peace and quiet. Its spaciousness also makes it the best spot for a picnic,-->
+                <!--just clean up afterwards if you hold one.</font></p>-->
+
+                <span style="display:block; width:92%; border-bottom: 1px solid #ccc; margin: auto;"></span>
+            </div>
+
+            <div class="lastnaloob">
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Reviews</b></h7>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="activity3" data-role="page">
+        <div class="ui-grid-c">
+            <div data-role="header">
+                <a href="#activities" data-icon="carat-l" data-transition="slide"
+                   class="btnback" style="border: none; height: 20px; box-shadow: none; "></a>
+                <h1>Attractions & Shows</h1>
+            </div>
+
+            <div class="container" style="padding:0px">
+                <div data-role="content" id="swimmingabout" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                     data-corners="false" data-tolerance="30,15" style="padding: 0px; margin-left: -5%;  margin-right: -5%;">
+                    <img  class="qwejkl  ui-shadow ui-corner-all " src="img/pukaswimming2.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;">
+                    <div class="imgCaption" style="margin-left:7%; margin-top: 2%; margin-bottom: 3%;"><b>Swimming</b><br> USD <font color="#00c0f0">999.99</font></div>
+                </div>
+
+                <span style="display:block; width:88%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+            </div>
+
+            <div class="lastnaloob" style="list-style-position: inside; width:300px; margin:left;">
+                <ul data-role="none" data-inset="true" class="boxshadow ui-listview ui-listview-inset ui-corner-all " >
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -6%;">
+                        <img src="img/booked2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">xxx Booked </p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%;">
+                        <img src="img/avail2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Available Today</p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%; margin-bottom: -8%;">
+                        <img src="img/instant2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Instant Confimation</p></li>
+                </ul>
+
+
+
+            </div>
+
+            <div>
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Highlights</b></h7>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - Cool off and see the clear blue water from up close.</font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - Be aware that you can only stand about 5 meters in though.</font></p>
+                <span style="display:block; width:92%; border-bottom: 1px solid #ccc; margin: auto;"></span>
+            </div>
+
+            <div class="lastnaloob">
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Reviews</b></h7>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="howtogetthere1" data-role="page">
+        <div class="ui-grid-c">
+            <div data-role="header">
+                <a href="#howtogetthere" data-icon="carat-l" data-transition="slide"
+                   class="btnback" style="border: none; height: 20px; box-shadow: none; "></a>
+                <h1>How to Get There</h1>
+            </div>
+
+            <div class="container" style="padding:0px">
+                <div data-role="content" id="howtogetthereabout" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                     data-corners="false" data-tolerance="30,15" style="padding: 0px; margin-left: -5%;  margin-right: -5%;">
+                    <img  class="qwejkl  ui-shadow ui-corner-all " src="img/howto2.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;">
+                    <!--<div class="imgCaption" style="margin-left:7%; margin-top: 2%; margin-bottom: 3%;"><b>Kayaking or Paddleboarding</b><br> USD <font color="#00c0f0">999.99</font></div>-->
+                </div>
+
+                <span style="display:block; width:88%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+            </div>
+
+            <div>
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>How to Get There</b></h7>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - <b>By Tricycle:</b> This is the best choice if you’re going with 2 or more people. They usually charge ?150 (~USD $3). There are also electric tricycles which carry more people and are more comfortable, plus they’re more eco-friendly too ??</font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - <b>By Motorcycle:</b> Some locals offer trips anywhere on the island on their motorcycles. Going to a place as far as Puka, they usually charge around ?100-150 (~USD $2-$3), depending on which part of the island you come from. They can carry 2 people max. </font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - <b>By Private Boat:</b> You can rent a private boat to take you there or drop you off and collect you later. Renting a private boat also enables you to visit other more secluded beaches. </font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - <b>Via Island Hopping:</b> Puka Beach is one of the destinations included in island hopping trips. But if you go there via island hopping, they’ll only give you a limited amount of time to enjoy the beach before they move on to the next place. </font></p>
+
+                <span style="display:block; width:92%; border-bottom: 1px solid #ccc; margin: auto;"></span>
+            </div>
+
+            <div class="lastnaloob">
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Reviews</b></h7>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div id="dining1" data-role="page">
+        <div class="ui-grid-c">
+            <div data-role="header">
+                <a href="#dinning" data-icon="carat-l" data-transition="slide"
+                   class="btnback" style="border: none; height: 20px; box-shadow: none; "></a>
+                <h1>Food and Dinning</h1>
+            </div>
+
+            <div class="container" style="padding:0px">
+                <div data-role="content" id="dinningabout" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true"
+                     data-corners="false" data-tolerance="30,15" style="padding: 0px; margin-left: -5%;  margin-right: -5%;">
+                    <img  class="qwejkl  ui-shadow ui-corner-all " src="img/hija.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;">
+                    <div class="imgCaption" style="margin-left:7%; margin-top: 2%; margin-bottom: 3%;"><b>Hija de Puka RestoBar</b><br> USD <font color="#00c0f0">999.99</font></div>
+                </div>
+
+                <span style="display:block; width:88%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+            </div>
+
+            <div class="lastnaloob" style="list-style-position: inside; width:300px; margin:left;">
+                <ul data-role="none" data-inset="true" class="boxshadow ui-listview ui-listview-inset ui-corner-all " >
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -6%;">
+                        <img src="img/booked2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">xxx Booked </p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%;">
+                        <img src="img/avail2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Available Today</p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left; left; margin-top: -8%; margin-bottom: -8%;">
+                        <img src="img/instant2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Instant Confimation</p></li>
+                </ul>
+
+
+
+            </div>
+
+            <div>
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Highlights</b></h7>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - There are a few restaurants on the beach, most of which are located closer to the entrance. And where there’s food, there are beers and cocktails too.</font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - It’s worth keeping in mind that food and drinks are relatively pricey there though. </font></p>
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - Alternatively you can bring your own and hold a picnic. </font></p>
+                <!--<p align="justify" style="padding-left: 4%; padding-right: 4%;"><font size="2"> - This part is a must-see if you go to Puka for some peace and quiet. Its spaciousness also makes it the best spot for a picnic,-->
+                <!--just clean up afterwards if you hold one.</font></p>-->
+
+                <span style="display:block; width:92%; border-bottom: 1px solid #ccc; margin: auto;"></span>
+            </div>
+
+            <div class="lastnaloob">
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Reviews</b></h7>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        $( document ).on( "pagecreate", function() {
+            var maxHeight = $( window ).height() - 60 + "px";
+        $( ".qwejkl" ).css( "max-height", maxHeight );
+        });
+
+
+    </script>
+
+
+</div><!--/content -->
+
+
+
+
+</body>
+
+
+</html>

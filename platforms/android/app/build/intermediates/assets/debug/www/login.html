@@ -1,0 +1,164 @@
+<!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>-->
+<!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script type="text/javascript">
+    $(document).ready(function()
+    {
+    $("#insert").click(function(){
+    var title=$("#title").val();
+    var duration=$("#duration").val();
+    var price=$("#price").val();
+    var dataString="title="+title+"&duration="+duration+"&price="+price+"&insert=";
+    if($.trim(title).length>0 & $.trim(duration).length>0 & $.trim(price).length>0)
+    {
+    $.ajax({
+    type: "POST",
+    url:"http://localhost/phonegap/database/insert.php",
+    data: dataString,
+    crossDomain: true,
+    cache: false,
+    beforeSend: function(){ $("#insert").val('Connecting...');},
+    success: function(data){
+    if(data=="ok")
+    {
+    alert("inserted");
+    $("#insert").val('submit');
+    }
+    else if(data=="error")
+    {
+    alert("error");
+    }
+    }
+    });
+    }return false;
+    });
+    });
+    </script>
+</head>
+<body >
+
+<div class="container">
+    <div class="row">
+
+            <!--<h3 class="heading-desc">
+                <button type="button" class="close pull-right" aria-hidden="true">×</button>
+                Login to Bootsnipp</h3>-->
+            <div class="title2" >
+                <h3 align="center" font-family="myFont" >
+                    Boracay Ph
+                </h3>
+            </div>
+
+            <div class="social-box">
+                <div class="row mg-btm">
+                    <div class="col-md-12">
+                        <a href="#" class="btn btn-primary btn-block" >
+                            <i class="icon-facebook"></i>   
+                            <img src="img/fb2.png" height="30" width="30">
+                             Login with Facebook
+                        </a>
+                    </div>
+                </div>  <!--row mg-btm-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" class="btn btn-info btn-block" >
+                            <i class="icon-googleplus"></i>   
+                            <img src="img/g2.png" height="30" width="30">
+                             Login with Google+
+                        </a>
+                    </div>  <!--col-md-12-->
+                </div> <!--row-->
+            </div>  <!--social box-->
+
+            <!-- Modal -->
+            <div class="modal left fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Log In</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <form>
+
+                                <input type="text" id="loginemail" name="fname" placeholder="Email">
+
+                                <input type="text" id="loginpw" name="lname" placeholder="Password">
+
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+
+                    </div><!-- modal-content -->
+                </div><!-- modal-dialog -->
+            </div><!-- modal -->
+
+            <!-- Modal -->
+            <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel2">Sign Up</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <form>
+                                <input type="text" id="signupemail" name="fname" placeholder="Email">
+
+                                <input type="text" id="signuppw" name="lname" placeholder="Password">
+
+                                <input type="submit" value="Submit">
+                            </form>
+
+                        </div>
+
+                    </div><!-- modal-content -->
+                </div><!-- modal-dialog -->
+            </div><!-- modal -->
+
+
+            <div class="main">
+
+                <!-- <input type="text" class="form-control" placeholder="Email" autofocus>
+                 <input type="password" class="form-control" placeholder="Password">
+
+                 Are you a business? <a href=""> Get started here</a>
+                 <span class="clearfix"></span>-->
+            </div> <!--main-->
+            <div class="login-footer">
+
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <button type="button" class="btn btn-loginsignup" data-toggle="modal" data-target="#myModal">
+                            Log In
+                        </button>
+                    </div>
+
+                    <div class="col-xs-6 col-md-6">
+                        <button type="button" class="btn btn-loginsignup" data-toggle="modal" data-target="#myModal2">
+                            Sign Up
+                        </button>
+                    </div>
+
+                </div>  <!--row-->
+            </div> <!--footer-->
+
+    </div>  <!--row-->
+
+
+
+</div>
+
+</body>

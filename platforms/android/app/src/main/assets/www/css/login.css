@@ -1,0 +1,243 @@
+.form-signin {
+  max-width: 400px;
+  display:block;
+ /* background-color: #f7f7f7;*/
+  /*-moz-box-shadow: 0 0 3px 3px #888;
+    -webkit-box-shadow: 0 0 3px 3px #888;
+	box-shadow: 0 0 3px 3px #888;*/
+  border-radius:2px;
+}
+/*.main{
+	padding: 38px;
+}*/
+.social-box{
+  /*margin: 0 auto;*/
+  /*padding: 60px;*/
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 50px;
+
+
+}
+.social-box a{
+  font-weight:bold;
+  font-size:18px;
+  padding:8px;
+}
+.social-box a i{
+  font-weight:bold;
+  font-size:20px;
+}
+.heading-desc{
+	font-size:20px;
+	font-weight:bold;
+	padding:38px 38px 0px 38px;
+
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: 20px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: 10px;
+  border-radius: 5px;
+
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+/*.login-footer{
+	background:#f0f0f0;
+	margin: 0 auto;
+	border-top: 1px solid #dadada;
+ 	padding:20px;
+ }
+.login-footer .left-section a{
+	font-weight:bold;
+	color:#8a8a8a;
+	line-height:19px;
+}*/
+.mg-btm{
+	margin-bottom:20px;
+}
+
+.btn-info {
+    background-color: #e02f2f!important;
+    border-color: red!important;
+     font-size: 15px!important;
+        text-align: none;
+}
+
+.btn-primary {
+    background-color: #3b5998!important;
+    font-size: 15px!important;
+    text-align: none;
+
+}
+
+/*.btn {
+text-align: left!important;
+}*/
+
+.singupemail {
+color: white;
+text-align: center;
+ background-color: #7f929c;
+}
+
+
+.loginemail {
+color: white;
+text-align: center;
+ background-color: #7f929c;
+}
+
+
+.login-footer {
+margin: 0 auto;
+  /*padding: 60px;*/
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 50px;
+
+
+}
+
+
+.title2 {
+    padding-top: 80px;
+    font-family: 'myFont';
+
+}
+
+.title2 h3{
+    font-size: 50px;
+    color: white;
+}
+
+
+body {
+
+ background-image: url(../img/bitch2.png);
+ background-size:cover;
+
+}*/
+
+@font-face{
+    font-family: 'myFont';
+    url:("../fonts/blow-webfont.ttf");
+    url:("../fonts/blow-webfont.woff");
+    url:("../fonts/blow-webfont.woff2");
+
+}
+
+
+@font-face {
+font-family: "myFont";
+font-size: 30px;
+src: url("../fonts/blow-webfont.ttf");
+src:
+url:("../fonts/blow-webfont.ttf"); format("ttf"),
+url:("../fonts/blow-webfont.woff"); format("woff"),
+ url:("../fonts/blow-webfont.woff2"); format("woff2");
+}
+
+
+
+/*Modal*/
+.modal.left .modal-dialog,
+	.modal.right .modal-dialog {
+		position: fixed;
+		margin: auto;
+		width: 100%;
+		height: 100%;
+		-webkit-transform: translate3d(0%, 0%, 0);
+		    -ms-transform: translate3d(0%, 25%, 0);
+		     -o-transform: translate3d(0%, 0, 0);
+		        transform: translate3d(25%, 0, 0);
+	}
+
+	.modal.left .modal-content,
+	.modal.right .modal-content {
+		height: 100%;
+		overflow-y: auto;
+	}
+
+	.modal.left .modal-body,
+	.modal.right .modal-body {
+		padding: 15px 15px 80px;
+	}
+
+/*Left*/
+	.modal.left.fade .modal-dialog{
+		left: -25px;
+		-webkit-transition: opacity 0.01s linear, left 0.01s ease-out;
+		   -moz-transition: opacity 0.01s linear, left 0.01s ease-out;
+		     -o-transition: opacity 0.01s linear, left 0.01s ease-out;
+		        transition: opacity 0.01s linear, left 0.01s ease-out;
+	}
+
+	.modal.left.fade.in .modal-dialog{
+		left: 0;
+	}
+
+/*Right*/
+	.modal.right.fade .modal-dialog {
+		right: -25px;
+		-webkit-transition: opacity 0s linear, right 0s ease-out;
+		   -moz-transition: opacity 0s linear, right 0s ease-out;
+		     -o-transition: opacity 0s linear, right 0s ease-out;
+		        transition: opacity 0s linear, right 0s ease-out;
+	}
+
+	.modal.right.fade.in .modal-dialog {
+		right: 0%;
+	}
+
+
+.btn-loginsignup {
+   	border-radius: 0;
+   	color: white;
+    text-align: center;
+    background-color: #7f929c;
+    text-size: 30px;
+}
+
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+

@@ -1,0 +1,33 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.hello.com"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.hello.com"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.hello.com"
+    },
+    "cordova-plugin-request-location-accuracy": {
+      "PACKAGE_NAME": "com.hello.com"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "com.hello.com"
+    },
+    "cordova-plugin-googlemaps": {
+      "PACKAGE_NAME": "com.hello.com"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.hello.com"
+    }
+  },
+  "dependent_plugins": {}
+}

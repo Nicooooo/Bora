@@ -1,0 +1,697 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+    <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="js/jquery.rwdImageMaps.min.js"></script>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <script type="text/javascript">
+
+        $(document).bind("pageshow", function( event, ui )
+        {
+        console.log('A page has changed!');
+        var page = $.mobile.activePage.attr('id');
+
+        if(page == "categories"){
+            var $_GET = {};
+            if(document.location.toString().indexOf('?') !== -1) {
+                var query = document.location
+                               .toString()
+                               // get the query string
+                               .replace(/^.*?\?/, '')
+                               // and remove any existing hash string (thanks, @vrijdenker)
+                               .replace(/#.*$/, '')
+                               .split('&');
+            
+                for(var i=0, l=query.length; i<l; i++) {
+                   var aux = decodeURIComponent(query[i]).split('=');
+                   $_GET[aux[0]] = aux[1];
+            }
+            }
+
+            $(".fixed").empty();
+            if($_GET['type'] != undefined){
+                if($_GET['type'] == 'night'){
+                        $(".fixed").append("<h1 class='headhead ui-title' role='heading' aria-level='1'>Nightlife</h1>");
+                }
+                else if($_GET['type'] == 'beach'){
+                        $(".fixed").append("<h1 class='headhead ui-title' role='heading' aria-level='1'>Beaches in the Island</h1>");
+                }
+                else if($_GET['type'] == 'restaurants'){
+                        $(".fixed").append("<h1 class='headhead ui-title' role='heading' aria-level='1'>Restaurants</h1>");
+                } 
+                else if($_GET['type'] == 'shop'){
+                        $(".fixed").append("<h1 class='headhead ui-title' role='heading' aria-level='1'>Shop around</h1>");
+                } 
+
+
+
+
+
+
+             //        var type = $_GET['type'];
+             //        console.log("page2"+type);
+             //        var url="http://localhost/PhoneGap/hello/www/models/main.php?req=things&type="+type;
+             //        $.getJSON(url,function(data){
+             //            // $(".catimg").empty();
+             //        $.each(data, function(i, field){   
+
+             //             // $(".catimg").append('<div><a rel="external" href="desc.html" data-transition="slide"> <img src="img/'+data[i].loc_imagedir+'"><h2> '+data[i].loc_name+' </h2></a> </div>');
+             //        });
+
+             // });
+            }
+            else if($_GET['station'] != undefined){
+                if($_GET['station'] == 'one'){
+                        $(".fixed").append("<h1 class='headhead ui-title' role='heading' aria-level='1'>Station 1</h1>");
+                }
+                else if($_GET['station'] == 'two'){
+                        $(".fixed").append("<h1 class='headhead ui-title' role='heading' aria-level='1'>Station 2</h1>");
+                }
+                else if($_GET['station'] == 'three'){
+                        $(".fixed").append("<h1 class='headhead ui-title' role='heading' aria-level='1'>Station 3</h1>");
+                } 
+
+
+
+             //        var type = $_GET['station'];
+             //        console.log("page2"+type);
+             //        var url="http://localhost/PhoneGap/hello/www/models/main.php?req=things&type="+type;
+             //        $.getJSON(url,function(data){
+             //            // $(".catimg").empty();
+             //        $.each(data, function(i, field){   
+             //             // $(".catimg").append('<div><a rel="external" href="desc.html" data-transition="slide"> <img src="img/'+data[i].loc_imagedir+'"><h2> '+data[i].loc_name+' </h2></a> </div>');
+             //        });
+             // });
+
+            }
+            
+
+        };
+    });
+    </script>
+
+
+<!--<script type='text/javascript'>
+    
+        var prevScrollpos = window.pageYOffset;
+        var barnav = document.getElementsByClassName("barnav")
+        
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        var fir = barnav[0];
+        var dash = barnav[1];
+        var cat = barnav[2];  
+        fir.style.bottom = "0";
+        dash.style.bottom = "0";
+        cat.style.bottom = "0";
+          if (prevScrollpos >= currentScrollPos) {
+               for(i=0; i<barnav.length; i++) {
+            barnav[i].style.bottom = "0";
+            }
+          }
+           else {
+                for(i=0; i<barnav.length; i++) {
+                barnav[i].style.bottom = "-70px";
+                }
+          }
+          prevScrollpos = currentScrollPos;
+        }
+    </script> -->
+
+ <script>
+        $(document).ready(function(e) {
+            console.log("lkajdlkjsd");
+            $('img[usemap]').rwdImageMaps();
+        });
+    </script>
+</head>
+<body>
+<div data-role="content">
+
+    <div id="page5" data-role="page" >
+    <div class="ui-grid-solo myMap" >
+
+
+    <img src="img/bora-map.png" width="697" height="1280" usemap="#image-map"></img>
+    <map name="image-map">
+        <area target="" rel="external" alt="Bat Cave" title="Bat Cave" href="desc.html?locations=bat" coords="221,122,329,145" shape="rect">
+        <area target="" rel="external" alt="Puka Shell Beach" title="Puka Shell Beach" href="desc.html?locations=puka" coords="84,260,236,283" shape="rect">
+        <area target="" rel="external" alt="Willy's Rock" title="Willy's Rock" href="desc.html?locations=willy" coords="44,492,153,513" shape="rect">
+        <area target="" rel="external" alt="Station 1" title="Station 1" href="desc.html?locations=station1" coords="197,431,27" shape="circle">
+        <area target="" alt="D Mall" title="D Mall" href="desc.html?locations=dmall" coords="262,564,385,585" shape="rect">
+        <area target="" alt="Bolabog Beach" title="Bolabog Beach" href="desc.html?locations=bolabog" coords="429,451,552,476" shape="rect">
+        <area target="" alt="Station 2" title="Station 2" href="desc.html?locations=station2" coords="352,625,27" shape="circle">
+        <area target="" alt="White Beach" title="White Beach" href="desc.html?locations=white" coords="200,689,307,711" shape="rect">
+        <area target="" alt="Station 3" title="Station 3" href="desc.html?locations=station3" coords="404,721,26" shape="circle">
+        <area target="" alt="Cagban Jetty Port" title="Cagban Jetty Port" href="#" coords="467,848,613,872" shape="rect">
+        <area target="" alt="Caticlan Jetty Port" title="Caticlan Jetty Port" href="#" coords="435,1110,581,1135" shape="rect">
+        <area target="" alt="Caticlan Airport" title="Caticlan Airport" href="#" coords="526,1181,670,1203" shape="rect">
+    </map>
+    </div>
+
+    <div data-id="botbar" data-role="footer" data-position="fixed" class="barnav"> 
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a  data-icon="home" href="#dash" data-transition="slide">Dashboard</a></li>
+                    <li><a data-icon="search" href="index_search.html" rel="external" data-transition="slide">Destinations</a></li>
+                    <li><a data-icon="shop" href="shopping.html" rel="external" data-transition="slide">Cart</a></li>
+                    <li><a data-icon="heart" href="booking.html" rel="external" data-transition="slide">Booking</a></li>
+                    <li><a data-icon="gear" href="setting_cordova.html" rel="external" data-transition="slide">Settings</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+    </div>
+
+    <div id="dash" data-role="page">
+
+        <div class="ui-grid-solo sliders">  
+              <img class="headpic" style="width:100%; max-height:234px;" src="img/borawall.jpg" ></img>
+              <img class="headpic2" style="width:100%; max-height:234px;" src="img/borawall2.jpg" ></img>
+              <img class="headpic3" style="width:100%;height:234px" src="img/borawall3.jpg" ></img>
+              <h2 class="headmes"> Welcome to Boracay </h2>
+              <p class="headmes2"> Discover and book amazing things-to-do at exclusive prices</p>
+        </div>
+
+       
+                <div class="ui-grid-solo">
+              <h2 class="what"> Recommended</h2>
+              <span class="more"> More > </span>
+        </div>
+
+          <div class="ui-grid-solo swiper-container">
+            <div class="swiper-wrapper catimg2">
+
+            <div class="swiper-slide">
+                <a rel="external" href="dash.html#attractions" data-transition="slide">
+                    <img src="img/samplehotel.jpg"><p> Microtel Inn & Suites by Wyndham </p>
+                    <img class="limage" src="img/teststars3.png" style="height:14px!important;"></img><p class="rev">(235)</p>
+                    <img class="limage2" src="img/location.png" style="height:6%!important;"></img><p class="rev rev2"> Malay, Aklan</p>
+                    <p class="php2"> 599.00</p> <p class="php">PHP</p> 
+                </a> 
+            </div>
+            <div class="swiper-slide">
+                <a rel="external" href="dash.html#attractions3" data-transition="slide">
+                    <img src="img/parasailing.jpg"><p> Parasailing by Diamond Hotel </p>
+                    <img class="limage" src="img/teststars3.png" style="height:14px!important;"></img><p class="rev">(20)</p>
+                    <img class="limage2" src="img/location.png" style="height:6%!important;"></img><p class="rev rev2"> Malay, Aklan</p>
+                    <p class="php2"> 750.00</p> <p class="php">PHP</p> 
+                </a> 
+            </div> 
+            <div class="swiper-slide">
+                <a rel="external" href="desc.html#attractions" data-transition="slide">
+                    <img src="img/samplehotel.jpg"><p> Microtel Inn & Suites by Wyndham </p>
+                    <img class="limage" src="img/teststars3.png" style="height:14px!important;"></img><p class="rev">(235)</p>
+                    <img class="limage2" src="img/location.png" style="height:6%!important;"></img><p class="rev rev2"> Malay, Aklan</p>
+                    <p class="php2"> 599.00</p> <p class="php">PHP</p> 
+                </a> 
+            </div>
+           
+
+            </div>
+            <!-- Add Pagination -->
+           
+         </div>
+
+
+        <div class="ui-grid-solo">
+              <h2 class="what"> Things to do</h2>
+              <span class="more"> More > </span>
+        </div>
+
+        <div class="ui-grid-c">
+            <div class="ui-block-a slider-img">
+                <a rel="external" href="#categories?type=night" data-transition="slide">
+                    <img src="img/w1.JPG">
+                    <img class="abs" src="img/coming.png">
+                    <p> Nightlife </p>
+                </a>
+            </div>
+            <div class="ui-block-b slider-img">
+                <a rel="external" href="#categories?type=beach">
+                    <img src="img/w2.JPG">
+                    <img class="abs" src="img/coming.png">
+                    <p> Beaches </p>
+                </a>
+            </div>
+            <div class="ui-block-c slider-img">
+                <a rel="external"  href="#categories?type=restaurants">
+                    <img src="img/w3.JPG">
+                    <img class="abs" src="img/coming.png">
+                </a>
+            </div>  
+            <div class="ui-block-d slider-img">
+                <a rel="external"  href="#categories?type=shop">
+                    <img src="img/w1.JPG">
+                    <img class="abs" src="img/coming.png">
+                    <p> D'Mall </p>
+                </a>
+            </div> 
+        </div>
+
+         <div class="ui-grid-solo">
+            <h2 class="what station"> Stations in the Island</h2>
+       
+        </div>
+
+
+          <div class="ui-grid-solo swiper-container">
+            <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+            <a rel="external" href="#categories?station=one" data-transition="slide">
+                <img src="img/station1.jpg">
+                <h2> Station 1</h2>
+            </a>
+            </div>
+
+            <div class="swiper-slide">
+            <a rel="external" href="#categories?station=two" data-transition="slide">
+                <img src="img/station2.jpg">
+                <h2> Station 2</h2>
+            </a>
+            </div> 
+            
+            
+            <div class="swiper-slide">
+            <a rel="external" href="img/station3.jpg" data-transition="slide">
+                <img src="img/station3.jpg">
+                <h2> Station 3</h2>
+                </a>
+            </div>
+            
+           
+
+            </div>
+            <!-- Add Pagination -->
+           
+         </div>
+
+         <div class="ui-grid-solo">
+            <h2 class="what station"> Gallery </h2>
+       
+        </div>
+
+
+          <div class="ui-grid-solo swiper-container">
+            <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+            <a rel="external" href="#categories?station=one" data-transition="slide">
+                <img src="img/station1.jpg">
+                <h2> Station 1</h2>
+            </a>
+            </div>
+            
+            <div class="swiper-slide">
+            <a rel="external" href="#categories?station=two" data-transition="slide">
+                <img src="img/station2.jpg">
+                <h2> Station 2</h2>
+            </a>
+            </div> 
+            
+            
+            <div class="swiper-slide">
+            <a rel="external" href="img/station3.jpg" data-transition="slide">
+                <img src="img/station3.jpg">
+                <h2> Station 3</h2>
+                </a>
+            </div>
+            
+           
+
+            </div>
+            <!-- Add Pagination -->
+           
+         </div>
+
+
+
+        <div data-id="botbar" data-role="footer" data-position="fixed" class="barnav"> 
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a class="ui-btn-active ui-state-persist"  data-icon="home" href="#dash" data-transition="slide">Dashboard</a></li>
+                    <li><a data-icon="search" href="index_search.html" rel="external" data-transition="slide">Destinations</a></li>
+                    <li><a data-icon="shop" href="shopping.html" rel="external" data-transition="slide">Cart</a></li>
+                    <li><a data-icon="heart" href="booking.html" rel="external" data-transition="slide">Booking</a></li>
+                    <li><a data-icon="gear" href="setting_cordova.html" rel="external" data-transition="slide">Settings</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+
+
+    </div>
+
+    <div id="categories" data-role="page">
+    <div data-role="header" data-theme="b" class="ui-header ui-bar-b fixed"> 
+    <a class="myHeader" href="dash.html" data-icon="arrow-l">Back</a>   
+           <!--  <h1 class="headhead">Nightlife</h1> -->
+    </div>
+     <div class="ui-grid-solo catimg">
+     <div>
+        <a rel="external" href="desc.html?locations=puka" data-transition="slide">
+            <img src="img/puka.jpg"><p> Puka Shell Beach </p>
+
+            <img class="limage" src="img/teststars3.png" ></img><p class="rev">(235)</p>
+            <img class="limage2" src="img/location.png" ></img><p class="rev rev2"> Malay, Aklan</p>
+            <p class="php2"> 599.00</p> <p class="php">PHP</p> 
+        </a> 
+     </div>
+     <div>
+        <a rel="external" href="desc.html?locations=willy" data-transition="slide">
+            <img src="img/willysrock.jpg"><p> Willy's Rock </p>
+            <img class="limage" src="img/teststars3.png" ></img><p class="rev">(235)</p>
+            <img class="limage2" src="img/location.png" ></img><p class="rev rev2"> Malay, Aklan</p>
+            <p class="php2"> 599.00</p> <p class="php">PHP</p> 
+        </a> 
+     </div>
+     <div>
+        <a rel="external" href="desc.html?locations=batcave" data-transition="slide">
+            <img src="img/batcave.jpg"><p> Bat Caves </p>
+            <img class="limage" src="img/teststars3.png" ></img><p class="rev">(235)</p>
+            <img class="limage2" src="img/location.png" ></img><p class="rev rev2"> Malay, Aklan</p>
+            <p class="php2"> 599.00</p> <p class="php">PHP</p> 
+
+        </a> 
+     </div>
+     <div>
+        <a rel="external" href="desc.html?locations=puka" data-transition="slide">
+            <img src="img/puka.jpg"><p> Puka Shell Beach </p>
+            <img class="limage" src="img/teststar2.jpg" ></img><p class="rev">(235)</p>
+            <img class="limage2" src="img/location.png" ></img><p class="rev rev2"> Malay, Aklan</p>
+            <p class="php2"> 599.00</p> <p class="php">PHP</p> 
+        </a> 
+     </div>
+       
+    </div>
+        <div data-id="botbar" data-role="footer" data-position="fixed" class="barnav"> 
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a  data-icon="home" href="#dash" data-transition="slide">Dashboard</a></li>
+                    <li><a class="ui-btn-active ui-state-persist" data-icon="search" href="index_search.html" rel="external" data-transition="slide">Destinations</a></li>
+                    <li><a data-icon="shop" href="shopping.html" rel="external" data-transition="slide">Cart</a></li>
+                    <li><a data-icon="heart" href="booking.html" rel="external" data-transition="slide">Booking</a></li>
+                    <li><a data-icon="gear" href="setting_cordova.html" rel="external" data-transition="slide">Settings</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+    </div>
+
+
+    <div id="attractions" data-role="page">
+        <div class="ui-grid-c">
+            <!-- <div data-role="header">
+                <a href="#attractions" data-icon="carat-l" data-transition="slide"
+                   class="btnback" style="border: none; height: 20px; box-shadow: none; "></a>
+                <h1>Attractions & Shows</h1>
+            </div> -->
+
+                <div data-role="content" id="farabout" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true" data-corners="false" data-tolerance="30,15" style="padding: 0px; margin-left: -5%;  margin-right: -5%;">
+                    <img  class="qwejkl  ui-shadow ui-corner-all " src="img/samplehotel.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;">
+                    <div class="imgCaption">
+                        <b>Microtel Inn Suites by Wyndham</b><br>
+                        <font> PHP </font>
+                        <font color="#51DFDB">599.00</font>
+                        <font class="jkl"> Malay, Aklan </font>
+                        <img src="img/teststars3.png">
+                    </div>
+                </div>
+
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+            </div>
+
+            <div class="lastnaloob" style="list-style-position: inside; width:300px; margin:left;">
+                <ul data-role="none" data-inset="true" class="boxshadow ui-listview ui-listview-inset ui-corner-all " >
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" 
+                    style="border: none;">
+                        <img src="img/booked2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">xxx Booked </p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left;margin-top: -8%;">
+                        <img src="img/avail2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Available Today</p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left;margin-top: -8%; margin-bottom: 0%;">
+                        <img src="img/instant2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Instant Confimation</p></li>
+                </ul>
+            </div>
+
+            <div class="descriptions">
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+                <p>Highlights</p>
+                <ul>
+                <li> At the far left of the beach you'll find an area which has kept most of its untouched beauty. </li>
+                <li> The beach is more spacious there and has more green nature. </li>
+                <li> There are also far less establishments and people around. </li>
+                <li>  This part is a must-see if you go to Puka for some peace and quiet. Its spaciousness also makes it the best spot for a picnic,
+                    just clean up afterwards if you hold one.</li>
+                </ul>
+
+
+                <span style="display:block; width:92%; border-bottom: 1px solid #ccc; margin: auto;"></span>
+            </div>
+
+            <div class="">
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Reviews</b></h7>
+            </div>
+
+            <div data-id="botbar" data-role="footer" data-position="fixed" class="barnav"> 
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a  data-icon="home" href="#dash" data-transition="slide">Dashboard</a></li>
+                    <li><a class="ui-btn-active ui-state-persist" data-icon="search" href="index_search.html" rel="external" data-transition="slide">Destinations</a></li>
+                    <li><a data-icon="shop" href="shopping.html" rel="external" data-transition="slide">Cart</a></li>
+                    <li><a data-icon="heart" href="booking.html" rel="external" data-transition="slide">Booking</a></li>
+                    <li><a data-icon="gear" href="setting_cordova.html" rel="external" data-transition="slide">Settings</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+            </div>
+
+        <div id="attractions2" data-role="page">
+        <div class="ui-grid-c">
+
+                <div data-role="content" id="farabout" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true" data-corners="false" data-tolerance="30,15" style="padding: 0px; margin-left: -5%;  margin-right: -5%;">
+                    <img  class="qwejkl  ui-shadow ui-corner-all " src="img/samplehotel.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;">
+                    <div class="imgCaption">
+                        <b>Puka Shell Beach</b><br>
+                        <font> PHP </font>
+                        <font color="#51DFDB">599.00</font>
+                        <font class="jkl"> Malay, Aklan </font>
+                        <img src="img/teststars3.png">
+                    </div>
+                </div>
+
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+        </div>
+
+            <div class="lastnaloob" style="list-style-position: inside; width:300px; margin:left;">
+                <ul data-role="none" data-inset="true" class="boxshadow ui-listview ui-listview-inset ui-corner-all " >
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" 
+                    style="border: none;">
+                        <img src="img/booked2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">xxx Booked </p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left;margin-top: -8%;">
+                        <img src="img/avail2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Available Today</p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left;margin-top: -8%; margin-bottom: 0%;">
+                        <img src="img/instant2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Instant Confimation</p></li>
+                </ul>
+            </div>
+
+            <div class="descriptions">
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+                <p>Highlights</p>
+                <ul>
+                <li> At the far left of the beach you'll find an area which has kept most of its untouched beauty. </li>
+                <li> The beach is more spacious there and has more green nature. </li>
+                <li> There are also far less establishments and people around. </li>
+                <li>  This part is a must-see if you go to Puka for some peace and quiet. Its spaciousness also makes it the best spot for a picnic,
+                    just clean up afterwards if you hold one.</li>
+                </ul>
+
+
+                <span style="display:block; width:92%; border-bottom: 1px solid #ccc; margin: auto;"></span>
+            </div>
+
+            <div class="">
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Reviews</b></h7>
+            </div>
+
+            <div data-id="botbar" data-role="footer" data-position="fixed" class="barnav"> 
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a  data-icon="home" href="#dash" data-transition="slide">Dashboard</a></li>
+                    <li><a class="ui-btn-active ui-state-persist" data-icon="search" href="index_search.html" rel="external" data-transition="slide">Destinations</a></li>
+                    <li><a data-icon="shop" href="shopping.html" rel="external" data-transition="slide">Cart</a></li>
+                    <li><a data-icon="heart" href="booking.html" rel="external" data-transition="slide">Booking</a></li>
+                    <li><a data-icon="gear" href="setting_cordova.html" rel="external" data-transition="slide">Settings</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+            </div>        
+
+         <div id="attractions3" data-role="page">
+        <div class="ui-grid-c">
+            <!-- <div data-role="header">
+                <a href="#attractions" data-icon="carat-l" data-transition="slide"
+                   class="btnback" style="border: none; height: 20px; box-shadow: none; "></a>
+                <h1>Attractions & Shows</h1>
+            </div> -->
+
+                <div data-role="content" id="farabout" class="photopopup ui-popup" data-overlay-theme="a" data-fullscreen="true" data-corners="false" data-tolerance="30,15" style="padding: 0px; margin-left: -5%;  margin-right: -5%;">
+                    <img  class="qwejkl  ui-shadow ui-corner-all " src="img/parasailing.jpg" alt="" style="margin: 0px; padding-left:3%; padding-right:3%;">
+                    <div class="imgCaption">
+                        <b>Parasailing by Diamond Hotel</b><br>
+                        <font> PHP </font>
+                        <font color="#51DFDB">599.00</font>
+                        <font class="jkl"> Malay, Aklan </font>
+                        <img src="img/teststars3.png">
+                    </div>
+                </div>
+
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+            </div>
+
+            <div class="lastnaloob" style="list-style-position: inside; width:300px; margin:left;">
+                <ul data-role="none" data-inset="true" class="boxshadow ui-listview ui-listview-inset ui-corner-all " >
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" 
+                    style="border: none;">
+                        <img src="img/booked2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">xxx Booked </p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left;margin-top: -8%;">
+                        <img src="img/avail2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Available Today</p></li>
+                    <li class="ui-li-static ui-body-inheri ui-li-has-icon ui-first-child" style="border: none; text-align: left;margin-top: -8%; margin-bottom: 0%;">
+                        <img src="img/instant2.png" alt="" class="ui-li-icon"><p style="margin-top: 5%">Instant Confimation</p></li>
+                </ul>
+            </div>
+
+            <div class="descriptions">
+                <span style="display:block; width:94%; border-top: 1px solid #ccc; margin: auto;"></span>
+
+                <p>Highlights</p>
+                <ul>
+                <li> At the far left of the beach you'll find an area which has kept most of its untouched beauty. </li>
+                <li> The beach is more spacious there and has more green nature. </li>
+                <li> There are also far less establishments and people around. </li>
+                <li>  This part is a must-see if you go to Puka for some peace and quiet. Its spaciousness also makes it the best spot for a picnic,
+                    just clean up afterwards if you hold one.</li>
+                </ul>
+
+
+                <span style="display:block; width:92%; border-bottom: 1px solid #ccc; margin: auto;"></span>
+            </div>
+
+            <div class="">
+                <p align="justify" style="padding-left: 4%; padding-right: 4%;"><h7><b>Reviews</b></h7>
+            </div>
+
+            <div data-id="botbar" data-role="footer" data-position="fixed" class="barnav"> 
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a  data-icon="home" href="#dash" data-transition="slide">Dashboard</a></li>
+                    <li><a class="ui-btn-active ui-state-persist" data-icon="search" href="index_search.html" rel="external" data-transition="slide">Destinations</a></li>
+                    <li><a data-icon="shop" href="shopping.html" rel="external" data-transition="slide">Cart</a></li>
+                    <li><a data-icon="heart" href="booking.html" rel="external" data-transition="slide">Booking</a></li>
+                    <li><a data-icon="gear" href="setting_cordova.html" rel="external" data-transition="slide">Settings</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+            </div>
+
+    </div>
+
+        </div>
+<!-- 
+    <div id="activities" data-role="page">
+        <div data-role="header">
+            <h1>jQuery Mobile</h1>
+        </div>
+        <div data-role="content">
+            jQuery Mobile Tutorials (page2)
+            <p><a href="#page1">Visit page 1</a></p>
+        </div>
+    </div>
+
+
+    <div id="transport" data-role="page">
+        <div data-role="header">
+            <h1>jQuery Mobile</h1>
+        </div>
+        <div data-role="content">
+            jQuery Mobile Tutorials (page3)
+            <p><a href="#page1">Visit page 1</a></p>
+        </div>
+    </div>
+
+    <div id="dining" data-role="page">
+        <div data-role="header">
+            <h1>jQuery Mobile</h1>
+        </div>
+        <div data-role="content">
+            jQuery Mobile Tutorials (page3)
+            <p><a href="#page1">Visit page 1</a></p>
+        </div>
+    </div> -->
+
+    <script>
+        $( document ).on( "pagecreate", function() {
+            var maxHeight = $( window ).height() - 60 + "px";
+        $( ".qwejkl" ).css( "max-height", maxHeight );
+        });
+    </script>
+
+     <script type="text/javascript" src="js/slick.min.js"></script>
+      <script src="js/swiper.min.js"></script>
+
+  <script>
+    var swiper = new Swiper('.swiper-container' );
+  </script>
+
+
+  <script type="text/javascript">
+    $(document).bind( "pagebeforechange", function( e, data ) {
+    if ( typeof data.toPage === "string" ) {
+
+        var u = $.mobile.path.parseUrl( data.toPage ),
+            re = /^desc.html/;
+
+        if ( u.hash.search(re) !== -1 ) {
+            showCategory( u, data.options );
+            e.preventDefault();
+        }
+    }
+
+    function showCategory( urlObj, options )
+    {
+    var locationName = urlObj.hash.replace( /.*location=/, "" ),
+        location = categoryData[ categoryName ],
+        pageSelector = urlObj.hash.replace( /\?.*$/, "" );
+        console.log("location"+location);
+
+    }
+
+
+    });
+
+  </script>
+
+
+</div><!--/content -->
+
+
+
+
+</body>
+
+
+</html>

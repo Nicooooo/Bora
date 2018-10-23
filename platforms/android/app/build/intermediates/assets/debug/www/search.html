@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <title>Working Google Maps</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="input-group">
+            <input id="pac-input" type="text" class="form-control" placeholder="Destination, Activity or Interest">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" onclick="searchMap()">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="optradio" onclick="getNearbyPlaces()">Nearby</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="optradio">Popular Destination</label>
+        </div>
+    </div>
+    <div class="row filter-button">
+        <div class="col-xs-4">
+            <button type="button" onclick="alert('Hello world!')">Scuba Diving</button>
+        </div>
+        <div class="col-xs-4">
+            <button type="button" onclick="alert('Hello world!')">White Beach</button>
+        </div>
+        <div class="col-xs-4">
+            <button type="button" onclick="alert('Hello world!')">Discovery Shores</button>
+        </div>
+    </div>
+    <div class="row second_btn_row">
+        <div class="col-xs-4">
+            <button type="button" onclick="alert('Hello world!')">Scuba Diving</button>
+        </div>
+        <div class="col-xs-4">
+            <button type="button" onclick="alert('Hello world!')">Parasailing</button>
+        </div>
+        <div class="col-xs-4">
+            <button type="button" onclick="alert('Hello world!')">Discovery Shores</button>
+        </div>
+    </div>
+    <div class="row row-map" id="map">
+    </div>
+</div>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqzEYqWrjoSSWORdcrWO0IPSatHtdFPw8&sensor=true&libraries=places" async defer> </script>
+</html>

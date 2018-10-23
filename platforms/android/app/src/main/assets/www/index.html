@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css"> -->
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title></title>
+        <!-- <script type="text/javascript" src="cordova.js"></script> -->
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<!--         <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script> -->
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+             var url="http://localhost/PhoneGap/hello/www/models/main.php?req=retrieve";
+             $.getJSON(url,function(result){
+             console.log(result);
+                  $.each(result, function(i, field){    
+                     $("#bg").append("<img class='image-responsive' alt='Welcome to Boracay' src='img/bora-map.png'></img>");
+                      });
+                  });
+            });
+        </script>
+    </head>
+
+
+    <body >
+        <div class="container-fluid">
+            <div class="row bg" id="bg">  
+            </div>
+            <div class="navbar test row" >
+            <ul>
+                <li class="re" >
+                   <a href="dashboard.html">
+                    
+                        <img src="img/home-mdpi.png"/>
+                   </a>
+                </li>
+                <li class="re" >
+                <a>
+                   <img src="img/home-mdpi.png"/>
+                </a>
+                </li>
+                <li class="re" >
+                <a href="search.html">
+                   <img src="img/home-mdpi.png"/>
+                </a>
+                </li>
+                <li class="re">
+                 <a>
+                    <img src="img/home-mdpi.png"/>
+                </a>
+                </li>
+                <li class="re" >
+                    <a href="setting.html">
+                         <img src="img/home-mdpi.png"/>
+                    </a>
+                </li>
+            </ul>
+
+            </div>
+
+        </div>
+
+        </div>
+
+
+
+    </body>
+
+
+</html>
+
+
+
+

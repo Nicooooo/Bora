@@ -1,0 +1,26 @@
+
+.sakmal  {
+    background-image: url("../img/ero.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center_BTN {
+    text-align:center;
+    border-radius:32px !important;
+    text-shadow: none !important;
+    height: 4%;
+    bottom: -5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    display: inline-block;
+}
+
+.hbooking {
+    bottom: -45%;
+    text-align: center;
+
+}
